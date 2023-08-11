@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3345C4D92A863CAC000C5304 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3345C4D82A863CAC000C5304 /* LICENSE */; };
 		336DC0DC2A5EEFB000EAE9AE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 336DC0DB2A5EEFB000EAE9AE /* README.md */; };
 		336DC0E02A5EF32A00EAE9AE /* Kernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 336DC0DF2A5EF32A00EAE9AE /* Kernel.metal */; };
 		336DC0E22A5EF3C800EAE9AE /* MTL_ArgSample.png in Resources */ = {isa = PBXBuildFile; fileRef = 336DC0E12A5EF3C700EAE9AE /* MTL_ArgSample.png */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		3345C4D62A862CBB000C5304 /* Metal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Metal-Bridging-Header.h"; sourceTree = "<group>"; };
 		3345C4D72A862D1D000C5304 /* MetalShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetalShader.h; sourceTree = "<group>"; };
+		3345C4D82A863CAC000C5304 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		336DC0DB2A5EEFB000EAE9AE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		336DC0DF2A5EF32A00EAE9AE /* Kernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Kernel.metal; sourceTree = "<group>"; };
 		336DC0E12A5EF3C700EAE9AE /* MTL_ArgSample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MTL_ArgSample.png; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				336DC0E12A5EF3C700EAE9AE /* MTL_ArgSample.png */,
 				336DC0DB2A5EEFB000EAE9AE /* README.md */,
+				3345C4D82A863CAC000C5304 /* LICENSE */,
 				33E9B5E72A5EB3BE00FDAA2E /* MTL_ArgSample */,
 				33E9B5E62A5EB3BE00FDAA2E /* Products */,
 			);
@@ -138,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3345C4D92A863CAC000C5304 /* LICENSE in Resources */,
 				336DC0E22A5EF3C800EAE9AE /* MTL_ArgSample.png in Resources */,
 				33E9B5F52A5EB3E600FDAA2E /* LaunchScreen.storyboard in Resources */,
 				33E9B5F22A5EB3E600FDAA2E /* Assets.xcassets in Resources */,
