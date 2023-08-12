@@ -13,10 +13,22 @@
 #include <simd/simd.h>
 
 enum {
-    kBuf_Pos = 0,
-    kBuf_grayWeight = 1,
 
-    kTex_Texture = 0,
+    // Vertex Shader Argument Table
+
+    // Buffer index
+    kVABindex_Pos = 0,
+
+
+
+    // Fragment Shader Argument Table
+
+    // Buffer index
+    kFABindex_grayWeight = 0,
+
+    // Texture index
+    kFATindex_Texture = 0
+
 };
 
 typedef struct
