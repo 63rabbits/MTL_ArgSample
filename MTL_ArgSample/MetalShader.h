@@ -31,12 +31,10 @@ enum {
 
 };
 
-typedef struct
-{
+struct ShaderIO {
     vector_float4 position;
     vector_float2 texCoords;
-
-} ShaderIO;
+};
 
 
 
