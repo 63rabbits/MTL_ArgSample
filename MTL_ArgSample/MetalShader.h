@@ -17,17 +17,17 @@ enum {
     // Vertex Shader Argument Table
 
     // Buffer index
-    kVABindex_Pos = 0,
+    kVATBindex_Pos = 0,
 
 
 
     // Fragment Shader Argument Table
 
     // Buffer index
-    kFABindex_grayWeight = 0,
+    kFATBindex_grayWeight = 0,
 
     // Texture index
-    kFATindex_Texture = 0
+    kFATTindex_Texture = 0
 
 };
 

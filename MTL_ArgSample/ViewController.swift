@@ -89,12 +89,12 @@ class ViewController: UIViewController, MTKViewDelegate {
         renderEncoder.setRenderPipelineState(renderPipeline)
         renderEncoder.setVertexBytes(self.shaderIO,
                                      length: MemoryLayout<ShaderIO>.stride * self.shaderIO.count,
-                                     index: kVABindex_Pos)
-        renderEncoder.setFragmentTexture(texture, index: kFATindex_Texture)
+                                     index: kVATBindex_Pos)
+        renderEncoder.setFragmentTexture(texture, index: kFATTindex_Texture)
         var grayWeight = vector_float3(0.298912, 0.586611, 0.114478)
         renderEncoder.setFragmentBytes(&grayWeight,
                                        length: MemoryLayout<vector_float3>.stride,
-                                       index: kFABindex_grayWeight)
+                                       index: kFATBindex_grayWeight)
         renderEncoder.drawPrimitives(type: .triangleStrip, vertexStart: 0, vertexCount: 4)
 
         renderEncoder.endEncoding()

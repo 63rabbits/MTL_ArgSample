@@ -15,7 +15,7 @@ struct RasterizerData {
 };
 
 vertex RasterizerData vertexShader(uint                 vid         [[ vertex_id ]],
-                                   constant ShaderIO    *vertices   [[ buffer(kVABindex_Pos) ]]
+                                   constant ShaderIO    *vertices   [[ buffer(kVATBindex_Pos) ]]
                                   ) {
     RasterizerData out;
     out.position = vertices[vid].position;
@@ -25,8 +25,8 @@ vertex RasterizerData vertexShader(uint                 vid         [[ vertex_id
 
 
 fragment float4 fragmentShader(RasterizerData           in          [[ stage_in ]],
-                               texture2d<float>         texture     [[ texture(kFATindex_Texture) ]],
-                               constant vector_float3   *grayWeight [[ buffer(kFABindex_grayWeight) ]]
+                               texture2d<float>         texture     [[ texture(kFATTindex_Texture) ]],
+                               constant vector_float3   *grayWeight [[ buffer(kFATBindex_grayWeight) ]]
                               ) {
     constexpr sampler colorSampler;
     float4 color = texture.sample(colorSampler, in.texCoords);
