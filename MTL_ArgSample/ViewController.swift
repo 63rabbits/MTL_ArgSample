@@ -21,7 +21,7 @@ class ViewController: UIViewController, MTKViewDelegate {
     private var renderPipeline: MTLRenderPipelineState!
     private let renderPassDescriptor = MTLRenderPassDescriptor()
 
-    private var shaderIO: [ShaderIO] = [ShaderIO]()
+    private var shaderIO: [ShaderIO] = []
 
     @IBOutlet private weak var mtkView: MTKView!
 
@@ -75,18 +75,20 @@ class ViewController: UIViewController, MTKViewDelegate {
 
         guard let commandBuffer = commandQueue.makeCommandBuffer() else {fatalError()}
 
-        shaderIO = [
-                        ShaderIO(position: vector_float4(-1, -1,  0,  1), texCoords: vector_float2(0, 1)),
-                        ShaderIO(position: vector_float4( 1, -1,  0,  1), texCoords: vector_float2(1, 1)),
-                        ShaderIO(position: vector_float4(-1,  1,  0,  1), texCoords: vector_float2(0, 0)),
-                        ShaderIO(position: vector_float4( 1,  1,  0,  1), texCoords: vector_float2(1, 0))
-                   ]
-
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture
 
         guard let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {return}
         guard let renderPipeline = renderPipeline else {fatalError()}
         renderEncoder.setRenderPipelineState(renderPipeline)
+
+
+        
+        shaderIO = [
+                        ShaderIO(position: vector_float4(-1, -1,  0,  1), texCoord: vector_float2(0, 1)),
+                        ShaderIO(position: vector_float4( 1, -1,  0,  1), texCoord: vector_float2(1, 1)),
+                        ShaderIO(position: vector_float4(-1,  1,  0,  1), texCoord: vector_float2(0, 0)),
+                        ShaderIO(position: vector_float4( 1,  1,  0,  1), texCoord: vector_float2(1, 0))
+                   ]
         renderEncoder.setVertexBytes(self.shaderIO,
                                      length: MemoryLayout<ShaderIO>.stride * self.shaderIO.count,
                                      index: kVATBindex_Pos)
@@ -94,7 +96,10 @@ class ViewController: UIViewController, MTKViewDelegate {
         var grayWeight = vector_float3(0.298912, 0.586611, 0.114478)
         renderEncoder.setFragmentBytes(&grayWeight,
                                        length: MemoryLayout<vector_float3>.stride,
-                                       index: kFATBindex_grayWeight)
+                                       index: kFATBindex_GrayWeight)
+
+
+
         renderEncoder.drawPrimitives(type: .triangleStrip, vertexStart: 0, vertexCount: 4)
 
         renderEncoder.endEncoding()

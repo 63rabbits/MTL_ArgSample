@@ -15,25 +15,20 @@
 enum {
 
     // Vertex Shader Argument Table
-
     // Buffer index
     kVATBindex_Pos = 0,
 
-
-
     // Fragment Shader Argument Table
-
     // Buffer index
-    kFATBindex_grayWeight = 0,
-
+    kFATBindex_GrayWeight = 0,
     // Texture index
     kFATTindex_Texture = 0
 
 };
 
 struct ShaderIO {
-    vector_float4 position;
-    vector_float2 texCoords;
+    vector_float4   position;
+    vector_float2   texCoord;
 };
 
 
